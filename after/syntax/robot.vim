@@ -3,7 +3,7 @@
 " Author:       Michael Foukarakis
 " Version:      0.0.5
 " Created:      Fri 17 Dec 2010 11:31:46 AM EET
-" Last Update:  Fri Jan 07 2011 05:38:47 PM GTB Standard Time
+" Last Update:  Fri Jan 07 2011 05:52:05 PM GTB Standard Time
 "------------------------------------------------------------------------
 " Description:
 "       Syntax file for Robot test framework files.
@@ -90,7 +90,6 @@ hi def link robotCommonSet	Keyword
 hi def link robotKeywordSet	Keyword
 hi def link robotTestcaseSet	Keyword
 
-" This is probably redundant - will check later. TODO
 let b:current_syntax = "robot"
 "------------------------------------------------------------------------
 let &cpo=s:cpo_save

@@ -1,9 +1,9 @@
 "=============================================================================
 " File:         after/syntax/robot.vim
 " Author:       Michael Foukarakis
-" Version:      0.0.5
+" Version:      0.0.6
 " Created:      Fri 17 Dec 2010 11:31:46 AM EET
-" Last Update:  Fri Jan 07 2011 05:52:05 PM GTB Standard Time
+" Last Update:  Thu Jan 20, 2011 20:02 GTB Standard Time
 "------------------------------------------------------------------------
 " Description:
 "       Syntax file for Robot test framework files.
@@ -13,6 +13,7 @@
 "       Drop this file into {rtp}/after/syntax
 "       Requires Vim 7+
 " History:
+" 	* 0.0.6 - Only highlight built-ins on word boundaries.
 " 	* 0.0.5 - Highlights table headers correctly. Added settings for
 " 	the various tables.
 " 	* 0.0.4 - Removed leading slashes from path regexp. Restricted to
@@ -38,8 +39,8 @@ syn match robotSpecial          display "\\\(\${.*}\|\\\|#\|[n|r|t]\)"
 " As variables may be used next to each other, do a non-greedy match.
 " Alternatively, match only alphanumeric chars inside brackets.
 syn match robotVariable         "\${.\{-}}"
-" This is actually NSN specific, it'll have to go for now.
-" syn match robotTestCaseName     "NG\d\+[ \|\n\|\t]"
+" This is actually NSN specific, keep/change/delete it at will.
+" syn match robotTestCaseName     "^NG\d\+[ \|\n\|\t]"
 " This is by far the most stupid regex you'll see in here..
 syn match robotPath             display "\(\.\{1,2}\/\)\=\(\(\h\|\d\)\+\/\)\+\(\(\h\|\d\)\+\.\h\+\)\{,1}$"
 " Operators
@@ -47,7 +48,7 @@ syn match robotOperator         "==\|="
 " Table headers
 syn match robotTable		"\c^\(\*\+\)\s*\(settings\|variables\|test cases\|\(user \)\?keywords\)\s*\1$"
 " Builtins
-syn match robotBuiltin          "Call Method\|Catenate\|Comment\|Convert To Boolean\|Convert To Integer\|Convert To Number\|Convert To String\|Create List\|Evaluate\|Exit For Loop\|Fail\|Fatal Error\|Get Count\|Get Length\|Get Library Instance\|Get Time\|Get Variables\|Import Library\|Import Resource\|Import Variables\|Length Should Be\|Log\|Log Many\|Log Variables\|No Operation\|Regexp Escape\|Remove Tags\|Repeat Keyword\|Replace Variables\|Run Keyword\|Run Keyword And Continue On Failure\|Run Keyword And Expect Error\|Run Keyword And Ignore Error\|Run Keyword If\|Run Keyword If All Critical Tests Passed\|Run Keyword If All Tests Passed\|Run Keyword If Any Critical Tests Failed\|Run Keyword If Any Tests Failed\|Run Keyword If Test Failed\|Run Keyword If Test Passed\|Run Keyword If Timeout Occurred\|Run Keyword Unless\|Run Keywords\|Set Global Variable\|Set Library Search Order\|Set Log Level\|Set Suite Variable\|Set Tags\|Set Test Message\|Set Test Variable\|Set Variable\|Set Variable If\|Should Be Empty\|Should Be Equal\|Should Be Equal As Integers\|Should Be Equal As Numbers\|Should Be Equal As Strings\|Should Be True\|Should Contain\|Should Contain X Times\|Should End With\|Should Match\|Should Match Regexp\|Should Not Be Empty\|Should Not Be Equal\|Should Not Be Equal As Integers\|Should Not Be Equal As Numbers\|Should Not Be Equal As Strings\|Should Not Be True\|Should Not Contain\|Should Not End With\|Should Not Match\|Should Not Match Regexp\|Should Not Start With\|Should Start With\|Sleep\|Variable Should Exist\|Variable Should Not Exist\|Wait Until Keyword Succeeds"
+syn match robotBuiltin          "\c\<\(Call Method\|Catenate\|Comment\|Convert To Boolean\|Convert To Integer\|Convert To Number\|Convert To String\|Create List\|Evaluate\|Exit For Loop\|Fail\|Fatal Error\|Get Count\|Get Length\|Get Library Instance\|Get Time\|Get Variables\|Import Library\|Import Resource\|Import Variables\|Length Should Be\|Log\|Log Many\|Log Variables\|No Operation\|Regexp Escape\|Remove Tags\|Repeat Keyword\|Replace Variables\|Run Keyword\|Run Keyword And Continue On Failure\|Run Keyword And Expect Error\|Run Keyword And Ignore Error\|Run Keyword If\|Run Keyword If All Critical Tests Passed\|Run Keyword If All Tests Passed\|Run Keyword If Any Critical Tests Failed\|Run Keyword If Any Tests Failed\|Run Keyword If Test Failed\|Run Keyword If Test Passed\|Run Keyword If Timeout Occurred\|Run Keyword Unless\|Run Keywords\|Set Global Variable\|Set Library Search Order\|Set Log Level\|Set Suite Variable\|Set Tags\|Set Test Message\|Set Test Variable\|Set Variable\|Set Variable If\|Should Be Empty\|Should Be Equal\|Should Be Equal As Integers\|Should Be Equal As Numbers\|Should Be Equal As Strings\|Should Be True\|Should Contain\|Should Contain X Times\|Should End With\|Should Match\|Should Match Regexp\|Should Not Be Empty\|Should Not Be Equal\|Should Not Be Equal As Integers\|Should Not Be Equal As Numbers\|Should Not Be Equal As Strings\|Should Not Be True\|Should Not Contain\|Should Not End With\|Should Not Match\|Should Not Match Regexp\|Should Not Start With\|Should Start With\|Sleep\|Variable Should Exist\|Variable Should Not Exist\|Wait Until Keyword Succeeds\)\>"
 " Common settings
 syn match robotCommonSet	"\c\[\(Documentation\|Timeout\)\]"
 " Keyword settings
@@ -93,5 +94,4 @@ hi def link robotTestcaseSet	Keyword
 let b:current_syntax = "robot"
 "------------------------------------------------------------------------
 let &cpo=s:cpo_save
-"=============================================================================
 " vim600: set fdm=marker:

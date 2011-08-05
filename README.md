@@ -1,4 +1,4 @@
-Vim plugins for development with Robot framework - seleniumlibrary
+Vim plugins for development with Robot framework
 
 FUNCTIONALITY
 ------------------------------------------
@@ -8,5 +8,5 @@ FUNCTIONALITY
 INSTALLATION
 ------------------------------------------
 Quickly install by:
-	- git clone git://github.com/jollychang/robotframework-vim.git
-	- cd robotframework-vim && cp -R * ~/.vim/
+    - git clone git://github.com/mfukar/robotframework-vim.git
+    - cd robotframework-vim && cp -R * ~/.vim/

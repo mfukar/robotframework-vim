@@ -16,5 +16,5 @@ USAGE
 ------------------------------------------
  * add a line like this at the beginning of your Robot Framework test.txt file(s):
 
-    # -*- coding: robot -*-
-    # enjoy color syntax...
+    `# -*- coding: robot -*-`
+ 

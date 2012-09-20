@@ -14,7 +14,10 @@ Quickly install by:
 
 USAGE
 ------------------------------------------
- * add a line like this at the beginning of your Robot Framework test.txt file(s):
+ * To enable syntax highlighting in vim, you may add this line at the beginning
+   of a Robot Framework file(s):
 
     `# -*- coding: robot -*-`
- 
+
+Alternatively, set the g:robot_syntax_for_txt global variable to treat .txt
+files as Robot files.

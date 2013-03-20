@@ -23,6 +23,7 @@ let s:cpo_save=&cpo
 set cpo&vim
 
 au BufNewFile,BufRead *.txt call s:FTrobot()
+au BufNewFile,BufRead *.robot setlocal filetype=robot
 
 func! s:FTrobot()
 	let b:topl = getline(1)

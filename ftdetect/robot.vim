@@ -1,9 +1,9 @@
 "=============================================================================
 " File:         ftdetect/robot.vim
 " Author:       Michael Foukarakis
-" Version:      0.2
+" Version:      0.3
 " Created:      Tue 21 Dec 2010 09:08:35 AM EET
-" Last Update:  Mon May 14, 2012 09:57 GTB Daylight Time
+" Last Update:  Mon Sep 02, 2013 21:57 GTB Daylight Time
 "------------------------------------------------------------------------
 " Description:
 "   Filetype detection plugin for Robot files.
@@ -23,6 +23,7 @@ let s:cpo_save=&cpo
 set cpo&vim
 
 au BufNewFile,BufRead *.txt call s:FTrobot()
+au BufNewFile,BufRead *.robot call s:FTrobot()
 
 func! s:FTrobot()
 	let b:topl = getline(1)

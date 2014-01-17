@@ -19,8 +19,8 @@ USAGE
 
     `# -*- coding: robot -*-`
 
-Alternatively, set the g:robot_syntax_for_txt global variable to treat .txt
-files as Robot files.
+ * Alternatively, set the `g:robot_syntax_for_txt` global variable to treat .txt
+   files as Robot files.
 
  * Or to enable the syntax highlighting for just a specific file you can issue the following command from vim:
 

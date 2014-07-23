@@ -2,15 +2,16 @@ Vim plugins for development with Robot framework
 
 FUNCTIONALITY
 ------------------------------------------
- * {rtp}/plugin/syntax/robot.vim - Robot syntax plugin for text, space-delimited files.
- * {rtp}/ftdetect/robot.vim      - Robot filetype recognition plugin for text, space-delimited files.
+ * {rtp}/after/syntax/robot.vim - Robot syntax plugin for text, space-delimited files.
+ * {rtp}/plugin/robot.vim       - Robot filetype recognition plugin for text, space-delimited files.
 
 INSTALLATION
 ------------------------------------------
 Quickly install by:
 
  * git clone git://github.com/j5shi/robotframework-vim.git
- * copy robotframework-vim to ~/vim/vimfiles/bundle/, if you use `pathogen` to manage your vim plugins.
+ * if you are not using `pathogen` vim plugin: cd robotframework-vim && cp -R * ~/.vim/ 
+ * if you are using `pathogen`vim plugin: copy robotframework-vim to ~/vim/vimfiles/bundle/
 
 
 USAGE

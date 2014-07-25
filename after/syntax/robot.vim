@@ -83,7 +83,7 @@ hi def link robotSettings         Include
 hi def link robotTestCaseName     Function
 hi def link robotComment          Comment
 hi def link robotEllipsis         String
-hi def link robotTable            Identifier
+hi def link robotTable            Special
 hi def link robotImport           Include
 hi def link robotSpecial          Special
 hi def link robotString           String

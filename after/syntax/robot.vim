@@ -42,8 +42,6 @@ syn match robotVariableScalar   "\${.\{-}}"
 syn match robotVariableList     "@{.\{-}}"
 " This is actually NSN specific, keep/change/delete it at will.
  syn match robotTestCaseName    "\c^\<\S*\>"
-" This is by far the most stupid regex you'll see in here..
-syn match robotPath             display "\(\.\{1,2}\/\)\=\(\(\h\|\d\)\+\/\)\+\(\(\h\|\d\)\+\.\h\+\)\{,1}$"
 " Operators
 syn match robotOperator         "==\|="
 " Table headers
@@ -83,12 +81,11 @@ hi def link robotSettings         Include
 hi def link robotTestCaseName     Function
 hi def link robotComment          Comment
 hi def link robotEllipsis         String
-hi def link robotTable            Special
+hi def link robotTable            Keyword
 hi def link robotImport           Include
 hi def link robotSpecial          Special
 hi def link robotString           String
 hi def link robotNumber           Number
-hi def link robotPath             Constant
 hi def link robotOperator         Operator
 hi def link robotBuiltin          Comment
 hi def link robotCommonSet        Keyword

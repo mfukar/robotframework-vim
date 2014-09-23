@@ -55,6 +55,9 @@ syn match robotCommonSet    "\c\[\(Documentation\|Timeout\)\]"
 syn match robotKeywordSet   "\c\[\(Arguments\|Return\)\]"
 " Testcase settings
 syn match robotTestcaseSet  "\c\[\(Tags\|Setup\|Teardown\|Precondition\|Postcondition\|Template\)\]"
+" Robot Gherkin support
+syn match robotGherkin      "\c\<\(Given\|When\|Then\|And\|But\)\>"
+
 " Settings (global)
 syn match robotSetup        "\c\(Suite\|Test\) \(Setup\|Teardown\|Precondition\|Postcondition\)"
 syn match robotSettings     "\c\(Library\|Resource\|Variables\|Documentation\|Metadata\|Force Tags\|Default Tags\|Test Template\|Test Timeout\)"
@@ -92,6 +95,7 @@ hi def link robotBuiltin    Comment
 hi def link robotCommonSet  Keyword
 hi def link robotKeywordSet Keyword
 hi def link robotTestcaseSet    Keyword
+hi def link robotGherkin    Keyword
 hi def link seleniumLibrary Keyword
 
 let b:current_syntax = "robot"

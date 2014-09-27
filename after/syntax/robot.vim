@@ -38,7 +38,7 @@ syn match robotEllipsis         display "\.\.\."
 syn match robotSpecial          display "\\\(\${.*}\|\\\|#\|[n|r|t]\)"
 " As variables may be used next to each other, do a non-greedy match.
 " Alternatively, match only alphanumeric chars inside brackets.
-syn match robotVariable     "\${.\{-}}"
+syn match robotVariable     "\(\$\|@\){.\{-}}"
 " This is actually NSN specific, keep/change/delete it at will.
 " syn match robotTestCaseName     "^NG\d\+[ \|\n\|\t]"
 " This is by far the most stupid regex you'll see in here..

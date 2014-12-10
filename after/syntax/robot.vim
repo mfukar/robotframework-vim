@@ -1,9 +1,9 @@
 "=============================================================================
 " File:         after/syntax/robot.vim
 " Author:       Michael Foukarakis
-" Version:      0.0.6
+" Version:      0.1
 " Created:      Fri 17 Dec 2010 11:31:46 AM EET
-" Last Update:  Wed Dec 03, 2014 16:37 EET
+" Last Update:  Wed Dec 10, 2014 12:39 EET
 "------------------------------------------------------------------------
 " Description:
 "       Syntax file for Robot test framework files.
@@ -13,19 +13,13 @@
 "       Drop this file into {rtp}/after/syntax
 "       Requires Vim 7+
 " History:
-"   * 0.0.6 - Only highlight built-ins on word boundaries.
-"   * 0.0.5 - Highlights table headers correctly. Added settings for
-"   the various tables.
-"   * 0.0.4 - Removed leading slashes from path regexp. Restricted to
-"           eol, to avoid matching common usage of slash.
-"           - Rudimentary string matching.
+"       0.1 - Robot now has a standard library, containing all sorts of goodies.
 " TODO:
 "       * Links look OK in most of my colorschemes, but your opinions are
 "       more than welcome.
 "       * Fix word boundaries for numbers.
 "       * Figure out a neater alternative for the monster path regex
-"       * Robot user guide is a bit foggy on the specs of the syntax. Need
-"       clarifications..
+"       * Robot has no syntax spec :(
 "=============================================================================
 let s:cpo_save=&cpo
 set cpo&vim
@@ -61,6 +55,8 @@ syn match robotGherkin      "\c\<\(Given\|When\|Then\|And\|But\)\>"
 " Settings (global)
 syn match robotSetup        "\c\(Suite\|Test\) \(Setup\|Teardown\|Precondition\|Postcondition\)"
 syn match robotSettings     "\c\<\(Library\|Resource\|Variables\|Documentation\|Metadata\|Force Tags\|Default Tags\|Test Template\|Test Timeout\)\>"
+" Standard library
+syn match robotStdlib       "\c\(Replace String\|Replace String Using Regexp\)" " TODO
 " Other libraries (Selenium)
 syn match seleniumLibrary   "\c\<\(Add Location Strategy\|Alert Should Be Present\|Assign Id To Element\|Call Selenium Api\|Capture Page Screenshot\|Capture Screenshot\|Checkbox Should Be Selected\|Checkbox Should Not Be Selected\|Choose Cancel On Next Confirmation\|Choose File\|Click Button\|Click Element\|Click Flex Element\|Click Image\|Click Link\|Close All Browsers\|Close Browser\|Close Window\|Confirm Action\|Current Frame Contains\|Current Frame Should Contain\|Delete All Cookies\|Delete Cookie\|Double Click Element\|Double Click Flex Element\|Drag And Drop\|Element Should Be Disabled\|Element Should Be Enabled\|Element Should Be Visible\|Element Should Contain\|Element Should Not Be Visible\|Element Text Should Be\|Execute Javascript\|Flex Element Property Should Be\|Flex Element Should Exist\|Flex Element Should Not Exist\|Flex Element Text Should Be\|Focus\|Frame Should Contain Text\|Frame Should Contain\|Get Alert Message\|Get All Links\|Get Cookie Value\|Get Cookies\|Get Element Attribute\|Get Horizontal Position\|Get List Items\|Get Location\|Get Matching Xpath Count\|Get Source\|Get Table Cell\|Get Text\|Get Title\|Get Value\|Get Vertical Position\|Get Window Identifiers\|Get Window Names\|Get Window Titles\|Go Back\|Go To\|Input Password\|Input Text Into Flex Element\|Input Text\|List Selection Should Be\|List Should Have No Selections\|Location Should Be\|Location Should Contain\|Log Source\|Maximize Browser Window\|Mouse Down On Image\|Mouse Down On Link\|Mouse Down\|Mouse Out\|Mouse Over\|Mouse Up\|Open Browser\|Open Context Menu\|Page Should Contain Button\|Page Should Contain Checkbox\|Page Should Contain Element\|Page Should Contain Image\|Page Should Contain Link\|Page Should Contain List\|Page Should Contain Radio Button\|Page Should Contain Textfield\|Page Should Contain\|Page Should Not Contain Button\|Page Should Not Contain Checkbox\|Page Should Not Contain Element\|Page Should Not Contain Image\|Page Should Not Contain Link\|Page Should Not Contain List\|Page Should Not Contain Radio Button\|Page Should Not Contain Textfield\|Page Should Not Contain\|Press Key Native\|Press Key\|Radio Button Should Be Set To\|Radio Button Should Not Be Selected\|Register Keyword To Run On Failure\|Reload Page\|Select All From List\|Select Checkbox\|Select Flex Application\|Select Frame\|Select From Flex Element\|Select From List\|Select Radio Button\|Select Window\|Set Selenium Speed\|Set Selenium Timeout\|Simulate\|Start Selenium Server\|Stop Selenium Server\|Submit Form\|Switch Browser\|Table Cell Should Contain\|Table Column Should Contain\|Table Footer Should Contain\|Table Header Should Contain\|Table Row Should Contain\|Table Should Contain\|Textfield Should Contain\|Textfield Value Should Be\|Title Should Be\|Unselect Checkbox\|Unselect Frame\|Unselect From List\|Wait For Condition\|Wait For Flex Element\|Wait Until Page Contains Element\|Wait Until Page Contains\|Wait Until Page Loaded\|Xpath Should Match X Times\)\>"
 

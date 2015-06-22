@@ -50,8 +50,8 @@ syn match robotKeywordSet   "\c\[\(Arguments\|Return\)\]"
 " Testcase settings
 syn match robotTestcaseSet  "\c\[\(Tags\|Setup\|Teardown\|Precondition\|Postcondition\|Template\)\]"
 " Robot Gherkin support
-syn match robotGherkin      "\c^\s*\<\(Given\|When\|Then\)\>"
-syn match robotGherkinAnd   "\c^\s*\<\(And\|But\)\>"
+syn match robotGherkin      "\c\(^\s*\)\@<=\<\(Given\|When\|Then\)\>"
+syn match robotGherkinAnd   "\c\(^\s*\)\@<=\<\(And\|But\)\>"
 
 " Settings (global)
 syn match robotSetup        "\c\(Suite\|Test\) \(Setup\|Teardown\|Precondition\|Postcondition\)"

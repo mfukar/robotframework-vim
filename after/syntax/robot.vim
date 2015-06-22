@@ -50,7 +50,8 @@ syn match robotKeywordSet   "\c\[\(Arguments\|Return\)\]"
 " Testcase settings
 syn match robotTestcaseSet  "\c\[\(Tags\|Setup\|Teardown\|Precondition\|Postcondition\|Template\)\]"
 " Robot Gherkin support
-syn match robotGherkin      "\c\<\(Given\|When\|Then\|And\|But\)\>"
+syn match robotGherkin      "\c^\s*\<\(Given\|When\|Then\)\>"
+syn match robotGherkinAnd   "\c^\s*\<\(And\|But\)\>"
 
 " Settings (global)
 syn match robotSetup        "\c\(Suite\|Test\) \(Setup\|Teardown\|Precondition\|Postcondition\)"
@@ -74,25 +75,26 @@ syn region robotString          start="\"" excludenl end="\""
 "------------------------------------------------------------------------
 " Links
 "------------------------------------------------------------------------
-hi def link robotVariable   Type
-hi def link robotSetup      Include
-hi def link robotSettings   Include
-hi def link robotTestCaseName   Function
-hi def link robotComment    Comment
-hi def link robotEllipsis   String
-hi def link robotTable      Identifier
-hi def link robotImport     Include
-hi def link robotSpecial    Special
-hi def link robotString     String
-hi def link robotNumber     Number
-hi def link robotPath       Constant
-hi def link robotOperator   Operator
-hi def link robotBuiltin    Comment
-hi def link robotCommonSet  Keyword
-hi def link robotKeywordSet Keyword
-hi def link robotTestcaseSet    Keyword
-hi def link robotGherkin    Keyword
-hi def link seleniumLibrary Keyword
+hi def link robotVariable     Type
+hi def link robotSetup        Include
+hi def link robotSettings     Include
+hi def link robotTestCaseName Function
+hi def link robotComment      Comment
+hi def link robotEllipsis     String
+hi def link robotTable        Identifier
+hi def link robotImport       Include
+hi def link robotSpecial      Special
+hi def link robotString       String
+hi def link robotNumber       Number
+hi def link robotPath         Constant
+hi def link robotOperator     Operator
+hi def link robotBuiltin      Comment
+hi def link robotCommonSet    Keyword
+hi def link robotKeywordSet   Keyword
+hi def link robotTestcaseSet  Keyword
+hi def link robotGherkin      Keyword
+hi def link robotGherkinAnd   Comment
+hi def link seleniumLibrary   Keyword
 
 let b:current_syntax = "robot"
 "------------------------------------------------------------------------

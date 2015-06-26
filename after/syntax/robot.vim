@@ -3,11 +3,10 @@
 " Author:       Michael Foukarakis
 " Version:      0.1
 " Created:      Fri 17 Dec 2010 11:31:46 AM EET
-" Last Update:  Wed Dec 10, 2014 12:39 EET
+" Last Update:  Fri Jun 26, 2015 09:56 EEST
 "------------------------------------------------------------------------
 " Description:
 "       Syntax file for Robot test framework files.
-"
 "------------------------------------------------------------------------
 " Installation:
 "       Drop this file into {rtp}/after/syntax
@@ -15,28 +14,22 @@
 " History:
 "       0.1 - Robot now has a standard library, containing all sorts of goodies.
 " TODO:
-"       * Links look OK in most of my colorschemes, but your opinions are
-"       more than welcome.
-"       * Fix word boundaries for numbers.
 "       * Figure out a neater alternative for the monster path regex
-"       * Robot has no syntax spec :(
 "=============================================================================
 let s:cpo_save=&cpo
 set cpo&vim
 "------------------------------------------------------------------------
 " Matches
 "------------------------------------------------------------------------
-syn match robotNumber           display "\<\d\+\>"
-syn match robotEllipsis         display "\.\.\."
+syn match robotNumber       display "\<\d\+\>"
+syn match robotEllipsis     display "\.\.\."
 " Special (escaped) character as defined in Robot's syntax.
-syn match robotSpecial          display "\\\(\${.*}\|\\\|#\|[n|r|t]\)"
+syn match robotSpecial      display "\\\(\${.*}\|\\\|#\|[n|r|t]\)"
 " As variables may be used next to each other, do a non-greedy match.
 " Alternatively, match only alphanumeric chars inside brackets.
 syn match robotVariable     "\(\$\|@\){.\{-}}"
-" This is actually NSN specific, keep/change/delete it at will.
-" syn match robotTestCaseName     "^NG\d\+[ \|\n\|\t]"
 " This is by far the most stupid regex you'll see in here..
-syn match robotPath             display "\(\.\{1,2}\/\)\=\(\(\h\|\d\)\+\/\)\+\(\(\h\|\d\)\+\.\h\+\)\{,1}$"
+syn match robotPath         display "\(\.\{1,2}\/\)\=\(\(\h\|\d\)\+\/\)\+\(\(\h\|\d\)\+\.\h\+\)\{,1}$"
 " Operators
 syn match robotOperator     "==\|="
 " Table headers

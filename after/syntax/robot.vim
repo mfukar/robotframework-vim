@@ -3,7 +3,7 @@
 " Author:       Michael Foukarakis
 " Version:      0.1
 " Created:      Fri 17 Dec 2010 11:31:46 AM EET
-" Last Update:  Fri Jun 26, 2015 09:56 EEST
+" Last Update:  Fri Jun 26, 2015 10:18 EEST
 "------------------------------------------------------------------------
 " Description:
 "       Syntax file for Robot test framework files.
@@ -90,4 +90,4 @@ hi def link seleniumLibrary Keyword
 let b:current_syntax = "robot"
 "------------------------------------------------------------------------
 let &cpo=s:cpo_save
-" vim600: set fdm=marker:
+" vim700: set fdm=marker:

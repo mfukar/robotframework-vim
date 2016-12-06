@@ -75,7 +75,7 @@ syn match builtInLibrary            "\c\<\(Wait Until Keyword Succeeds\|Variable
 " Regions
 "------------------------------------------------------------------------
 " Single-line comments. Are there multi-line comments?
-syn region robotComment     display start="^#" excludenl end="$"
+syn region robotComment     display start="#" excludenl end="$"
 syn region robotString      start="\"" excludenl end="\""
 
 "------------------------------------------------------------------------

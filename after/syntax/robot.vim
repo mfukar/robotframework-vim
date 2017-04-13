@@ -29,7 +29,7 @@ syn match robotEllipsis             display "\.\.\."
 syn match robotSpecial              display "\\\(\${.*}\|\\\|#\|[n|r|t]\)"
 " As variables may be used next to each other, do a non-greedy match.
 " Alternatively, match only alphanumeric chars inside brackets.
-syn match robotVariable             "\(\$\|@\){.\{-}}"
+syn match robotVariable             "\(\$\|@\|&\|%\){.\{-}}"
 " This is by far the most stupid regex you'll see in here..
 syn match robotPath                 display "\(\.\{1,2}\/\)\=\(\(\h\|\d\)\+\/\)\+\(\(\h\|\d\)\+\.\h\+\)\{,1}$"
 " Operators

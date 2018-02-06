@@ -74,8 +74,11 @@ syn match builtInLibrary            "\c\<\(Wait Until Keyword Succeeds\|Variable
 "------------------------------------------------------------------------
 " Regions
 "------------------------------------------------------------------------
-" Single-line comments. Are there multi-line comments?
-syn region robotComment     display start="#" excludenl end="$"
+" Comments are defined as: "All characters following the hash character (#),
+" when it is the first character of a cell". The start of a cell is either the
+" first non-whitespace content on a line or delimited either by two spaces or
+" a tab character.
+syn region robotComment     display start="\(^\|  \|\t\)[ \t]*#" excludenl end="$"
 syn region robotString      start="\"" excludenl end="\""
 
 "------------------------------------------------------------------------
